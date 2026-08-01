@@ -6,7 +6,7 @@ import CategoryFilter from './components/CategoryFilter';
 import ProductDetailModal from './components/ProductDetailModal';
 import CheckoutModal from './components/CheckoutModal';
 import Footer from './components/Footer';
-import { products } from './data/product';
+import { products } from './data/Product';
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
