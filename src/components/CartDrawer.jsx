@@ -1,6 +1,6 @@
 import { X, Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { formatCurrency } from '../utils/formatCurrency';
+import { formatCurrency } from '../utils/FormatCurrency';
 
 export default function CartDrawer({ onOpenCheckout }) {
   const {

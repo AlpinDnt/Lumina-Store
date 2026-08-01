@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { X, CheckCircle, ShieldCheck, CreditCard, Lock, Import } from 'lucide-react';
+import { X, CheckCircle, ShieldCheck, CreditCard, Lock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { formatCurrency } from '../utils/FormatCurrency';
-import { products } from '../data/Product';
 
 export default function CheckoutModal({ isOpen, onClose }) {
   const { cart, totalPrice, clearCart } = useCart();
   const [isSuccess, setIsSuccess] = useState(false);
+  const [orderId, setOrderId] = useState('');
 
   // State Form Data
   const [formData, setFormData] = useState({
@@ -31,12 +31,14 @@ export default function CheckoutModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simulasi proses transaksi berhasil
+    setOrderId(`#LUM-${Math.floor(100000 + Math.random() * 900000)}`);
     setIsSuccess(true);
     clearCart();
   };
 
   const handleCloseAll = () => {
     setIsSuccess(false);
+    setOrderId('');
     onClose();
   };
 
@@ -76,7 +78,7 @@ export default function CheckoutModal({ isOpen, onClose }) {
               <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-4 text-xs text-zinc-600 max-w-sm mx-auto text-left space-y-1">
                 <div className="flex justify-between">
                   <span>Order ID:</span>
-                  <span className="font-mono font-bold text-zinc-900">#LUM-{Math.floor(100000 + Math.random() * 900000)}</span>
+                  <span className="font-mono font-bold text-zinc-900">{orderId}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping Address:</span>
