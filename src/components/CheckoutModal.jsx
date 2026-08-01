@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { X, CheckCircle, ShieldCheck, CreditCard, Lock } from 'lucide-react';
+import { X, CheckCircle, ShieldCheck, CreditCard, Lock, Import } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { formatCurrency } from '../utils/formatCurrency';
+import { formatCurrency } from '../utils/FormatCurrency';
+import { products } from '../data/Product';
 
 export default function CheckoutModal({ isOpen, onClose }) {
   const { cart, totalPrice, clearCart } = useCart();
