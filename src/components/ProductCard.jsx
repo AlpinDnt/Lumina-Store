@@ -1,5 +1,5 @@
 import { ShoppingBag, Star } from 'lucide-react';
-import { formatCurrency } from '../utils/formatCurrency';
+import { formatCurrency } from '../utils/FormatCurrency';
 import { useCart } from '../context/CartContext';
 
 // 1. Terima props onSelectProduct
